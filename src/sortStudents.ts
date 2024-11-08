@@ -23,7 +23,7 @@ export function sortStudents(
     return grade.reduce((acc, note) => acc + note, 0) / grade.length;
   }
 
-  const studentsCopy: Student[] = [...students]
+  return [...students]
     .sort((a: Student, b: Student): number => {
       const averageA = calculateAverage(a.grades);
       const averageB = calculateAverage(b.grades);
@@ -52,6 +52,4 @@ export function sortStudents(
 
       return order === 'asc' ? comparison : -comparison;
     });
-
-  return studentsCopy;
 }
